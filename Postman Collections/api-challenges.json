@@ -360,6 +360,16 @@
 						],
 						"type": "text/javascript"
 					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4661099e-20a1-489c-8062-5450cd31ada5",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
 				}
 			],
 			"id": "638ced67-4108-4878-a20a-9dbd0511ad5c",
@@ -371,45 +381,7 @@
 				"header": [],
 				"url": "{{baseUrl}}/todos/{{invalid-id}}"
 			},
-			"response": [
-				{
-					"id": "40f9f8fc-32af-43fb-bd82-37f82f3196de",
-					"name": "Get Todos By Id",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": "{{baseUrl}}/todos/{{id}}"
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Date",
-							"value": "Wed, 19 Apr 2023 17:16:02 GMT"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "X-CHALLENGER",
-							"value": "rest-api-challenges-single-player"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Server",
-							"value": "Jetty(9.4.z-SNAPSHOT)"
-						}
-					],
-					"cookie": [],
-					"responseTime": null,
-					"body": "{\n    \"todos\": [\n        {\n            \"id\": 1,\n            \"title\": \"scan paperwork\",\n            \"doneStatus\": false,\n            \"description\": \"\"\n        }\n    ]\n}"
-				}
-			]
+			"response": []
 		},
 		{
 			"name": "Get todo",
