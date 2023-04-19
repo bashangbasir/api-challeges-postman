@@ -256,13 +256,34 @@
 		},
 		{
 			"name": "Get todo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ec66ef58-7b09-4176-bf6d-4a94c6efd793",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "855ca379-5dbd-459a-a92f-b3b5c3dbad3b",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [
+					{
+						"key": "X-CHALLENGER",
+						"value": "{{X-CHALLENGER}}",
+						"type": "text"
+					}
+				],
+				"url": "{{baseUrl}}/todo"
 			},
 			"response": [
 				{
