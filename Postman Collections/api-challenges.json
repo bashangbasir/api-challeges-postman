@@ -336,6 +336,87 @@
 			]
 		},
 		{
+			"name": "Get Todos By Invalid",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3d7bb47a-9795-4d0e-b616-28f8cc8c4977",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Todos is in array\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.todos).instanceOf(Array);",
+							"});",
+							"",
+							"pm.test(\"Check todo have properties -> [id], [title], [doneStatus] and [description]\", function () {",
+							"    var todosData = pm.response.json().todos;",
+							"     ",
+							"    for(let i=0; i < todosData.length; i++){",
+							"        pm.expect(todosData[i]).to.have.property(\"id\");",
+							"        pm.expect(todosData[i]).to.have.property(\"title\");",
+							"        pm.expect(todosData[i]).to.have.property(\"doneStatus\");",
+							"        pm.expect(todosData[i]).to.have.property(\"description\");",
+							"    }",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "638ced67-4108-4878-a20a-9dbd0511ad5c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{baseUrl}}/todos/{{id}}"
+			},
+			"response": [
+				{
+					"id": "40f9f8fc-32af-43fb-bd82-37f82f3196de",
+					"name": "Get Todos By Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/todos/{{id}}"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 19 Apr 2023 17:16:02 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-CHALLENGER",
+							"value": "rest-api-challenges-single-player"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Server",
+							"value": "Jetty(9.4.z-SNAPSHOT)"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"todos\": [\n        {\n            \"id\": 1,\n            \"title\": \"scan paperwork\",\n            \"doneStatus\": false,\n            \"description\": \"\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
 			"name": "Get todo",
 			"event": [
 				{
