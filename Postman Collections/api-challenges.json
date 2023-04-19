@@ -1,0 +1,258 @@
+{
+	"info": {
+		"_postman_id": "36bd08ec-fdba-4e18-ae1e-36f54d2165ee",
+		"name": "API Challenges",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "X-challenger",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4b04d231-5bd0-490e-bf1f-e9e51033d177",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"",
+							"pm.test(\"[X-CHALLENGER] is present\", function () {",
+							"    pm.response.to.have.header(\"X-CHALLENGER\");",
+							"});",
+							"",
+							"//console.log(pm.response.headers.get(\"X-CHALLENGER\"));",
+							"",
+							"pm.environment.set(\"X-CHALLENGER\", pm.response.headers.get(\"X-CHALLENGER\"));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "6e6ee925-dada-40b4-99fc-734def765d85",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "{{baseUrl}}/challenger"
+			},
+			"response": [
+				{
+					"id": "ce4acc58-45c0-49da-9305-a609a5b2b91a",
+					"name": "X-challenger",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": "{{baseUrl}}/challenger"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 19 Apr 2023 12:50:00 GMT"
+						},
+						{
+							"key": "X-CHALLENGER",
+							"value": "rest-api-challenges-single-player"
+						},
+						{
+							"key": "Location",
+							"value": "/gui/challenges"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html;charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Server",
+							"value": "Jetty(9.4.z-SNAPSHOT)"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Get challenges",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "44cc285f-4a07-4e4f-9096-59e38b8dcd25",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Challenges is in array\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.challenges).instanceOf(Array);",
+							"});",
+							"",
+							"pm.test(\"Check challenge have properties -> [name], [description] and [status]\", function () {",
+							"    var challengesData = pm.response.json().challenges;",
+							"     ",
+							"    for(let i=0; i < challengesData.length; i++){",
+							"        pm.expect(challengesData[i]).to.have.property(\"name\");",
+							"        pm.expect(challengesData[i]).to.have.property(\"description\");",
+							"        pm.expect(challengesData[i]).to.have.property(\"status\");",
+							"    }",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "a8f7a520-d143-41b3-aec2-34cf12606d74",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-CHALLENGER",
+						"value": "{{X-CHALLENGER}}",
+						"type": "text"
+					}
+				],
+				"url": "{{baseUrl}}/challenges"
+			},
+			"response": [
+				{
+					"id": "bd675a18-c5c7-49fe-b268-7396d96f1d15",
+					"name": "Get challenges",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/challenges"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 19 Apr 2023 12:52:44 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Location",
+							"value": "/gui/challenges"
+						},
+						{
+							"key": "X-CHALLENGER",
+							"value": "rest-api-challenges-single-player"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Server",
+							"value": "Jetty(9.4.z-SNAPSHOT)"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"challenges\": [\n        {\n            \"name\": \"POST /challenger (201)\",\n            \"description\": \"Issue a POST request on the `/challenger` end point, with no body, to create a new challenger session. Use the generated X-CHALLENGER header in future requests to track challenge completion.\",\n            \"status\": true\n        },\n        {\n            \"name\": \"GET /challenges (200)\",\n            \"description\": \"Issue a GET request on the `/challenges` end point\",\n            \"status\": true\n        },\n        {\n            \"name\": \"GET /todos (200)\",\n            \"description\": \"Issue a GET request on the `/todos` end point\",\n            \"status\": false\n        },\n        {\n            \"name\": \"GET /todo (404) not plural\",\n            \"description\": \"Issue a GET request on the `/todo` end point should 404 because nouns should be plural\",\n            \"status\": false\n        },\n        {\n            \"name\": \"GET /todos/{id} (200)\",\n            \"description\": \"Issue a GET request on the `/todos/{id}` end point to return a specific todo\",\n            \"status\": false\n        },\n        {\n            \"name\": \"GET /todos/{id} (404)\",\n            \"description\": \"Issue a GET request on the `/todos/{id}` end point for a todo that does not exist\",\n            \"status\": false\n        },\n        {\n            \"name\": \"GET /todos (200) ?filter\",\n            \"description\": \"Issue a GET request on the `/todos` end point with a query filter to get only todos which are 'done'. There must exist both 'done' and 'not done' todos, to pass this challenge.\",\n            \"status\": false\n        },\n        {\n            \"name\": \"HEAD /todos (200)\",\n            \"description\": \"Issue a HEAD request on the `/todos` end point\",\n            \"status\": false\n        },\n        {\n            \"name\": \"POST /todos (201)\",\n            \"description\": \"Issue a POST request to successfully create a todo\",\n            \"status\": false\n        },\n        {\n            \"name\": \"POST /todos (400) doneStatus\",\n            \"description\": \"Issue a POST request to create a todo but fail validation on the `doneStatus` field\",\n            \"status\": false\n        },\n        {\n            \"name\": \"POST /todos/{id} (200)\",\n            \"description\": \"Issue a POST request to successfully update a todo\",\n            \"status\": false\n        },\n        {\n            \"name\": \"DELETE /todos/{id} (200)\",\n            \"description\": \"Issue a DELETE request to successfully delete a todo\",\n            \"status\": false\n        },\n        {\n            \"name\": \"DELETE /todos/{id} (200) all\",\n            \"description\": \"Issue a DELETE request to successfully delete the last todo in system so that there are no more todos in the system\",\n            \"status\": false\n        },\n        {\n            \"name\": \"OPTIONS /todos (200)\",\n            \"description\": \"Issue an OPTIONS request on the `/todos` end point. You might want to manually check the 'Allow' header in the response is as expected.\",\n            \"status\": false\n        },\n        {\n            \"name\": \"GET /todos (200) XML\",\n            \"description\": \"Issue a GET request on the `/todos` end point with an `Accept` header of `application/xml` to receive results in XML format\",\n            \"status\": false\n        },\n        {\n            \"name\": \"GET /todos (200) JSON\",\n            \"description\": \"Issue a GET request on the `/todos` end point with an `Accept` header of `application/json` to receive results in JSON format\",\n            \"status\": false\n        },\n        {\n            \"name\": \"GET /todos (200) ANY\",\n            \"description\": \"Issue a GET request on the `/todos` end point with an `Accept` header of `*/*` to receive results in default JSON format\",\n            \"status\": false\n        },\n        {\n            \"name\": \"GET /todos (200) XML pref\",\n            \"description\": \"Issue a GET request on the `/todos` end point with an `Accept` header of `application/xml, application/json` to receive results in the preferred XML format\",\n            \"status\": false\n        },\n        {\n            \"name\": \"GET /todos (200) no accept\",\n            \"description\": \"Issue a GET request on the `/todos` end point with no `Accept` header present in the message to receive results in default JSON format\",\n            \"status\": false\n        },\n        {\n            \"name\": \"GET /todos (406)\",\n            \"description\": \"Issue a GET request on the `/todos` end point with an `Accept` header `application/gzip` to receive 406 'NOT ACCEPTABLE' status code\",\n            \"status\": false\n        },\n        {\n            \"name\": \"POST /todos XML\",\n            \"description\": \"Issue a POST request on the `/todos` end point to create a todo using Content-Type `application/xml`\",\n            \"status\": false\n        },\n        {\n            \"name\": \"POST /todos JSON\",\n            \"description\": \"Issue a POST request on the `/todos` end point to create a todo using Content-Type `application/json`\",\n            \"status\": false\n        },\n        {\n            \"name\": \"POST /todos (415)\",\n            \"description\": \"Issue a POST request on the `/todos` end point with an unsupported content type to generate a 415 status code\",\n            \"status\": false\n        },\n        {\n            \"name\": \"POST /todos XML to JSON\",\n            \"description\": \"Issue a POST request on the `/todos` end point to create a todo using Content-Type `application/xml` but Accept `application/json`\",\n            \"status\": false\n        },\n        {\n            \"name\": \"POST /todos JSON to XML\",\n            \"description\": \"Issue a POST request on the `/todos` end point to create a todo using Content-Type `application/json` but Accept `application/xml`\",\n            \"status\": false\n        },\n        {\n            \"name\": \"DELETE /heartbeat (405)\",\n            \"description\": \"Issue a DELETE request on the `/heartbeat` end point and receive 405 (Method Not Allowed)\",\n            \"status\": false\n        },\n        {\n            \"name\": \"PATCH /heartbeat (500)\",\n            \"description\": \"Issue a PATCH request on the `/heartbeat` end point and receive 500 (internal server error)\",\n            \"status\": false\n        },\n        {\n            \"name\": \"TRACE /heartbeat (501)\",\n            \"description\": \"Issue a TRACE request on the `/heartbeat` end point and receive 501 (Not Implemented)\",\n            \"status\": false\n        },\n        {\n            \"name\": \"GET /heartbeat (204)\",\n            \"description\": \"Issue a GET request on the `/heartbeat` end point and receive 204 when server is running\",\n            \"status\": false\n        },\n        {\n            \"name\": \"POST /secret/token (401)\",\n            \"description\": \"Issue a POST request on the `/secret/token` end point and receive 401 when Basic auth username/password is not admin/password\",\n            \"status\": false\n        },\n        {\n            \"name\": \"POST /secret/token (201)\",\n            \"description\": \"Issue a POST request on the `/secret/token` end point and receive 201 when Basic auth username/password is admin/password\",\n            \"status\": false\n        },\n        {\n            \"name\": \"GET /secret/note (403)\",\n            \"description\": \"Issue a GET request on the `/secret/note` end point and receive 403 when X-AUTH-TOKEN does not match a valid token\",\n            \"status\": false\n        },\n        {\n            \"name\": \"GET /secret/note (401)\",\n            \"description\": \"Issue a GET request on the `/secret/note` end point and receive 401 when no X-AUTH-TOKEN header present\",\n            \"status\": false\n        },\n        {\n            \"name\": \"POST /secret/note (403)\",\n            \"description\": \"Issue a POST request on the `/secret/note` end point with a note payload {\\\"note\\\":\\\"my note\\\"} and receive 403 when X-AUTH-TOKEN does not match a valid token\",\n            \"status\": false\n        },\n        {\n            \"name\": \"POST /secret/note (401)\",\n            \"description\": \"Issue a POST request on the `/secret/note` end point with a note payload {\\\"note\\\":\\\"my note\\\"} and receive 401 when no X-AUTH-TOKEN present\",\n            \"status\": false\n        },\n        {\n            \"name\": \"GET /secret/note (200)\",\n            \"description\": \"Issue a GET request on the `/secret/note` end point receive 200 when valid X-AUTH-TOKEN used - response body should contain the note\",\n            \"status\": false\n        },\n        {\n            \"name\": \"POST /secret/note (200)\",\n            \"description\": \"Issue a POST request on the `/secret/note` end point with a note payload e.g. {\\\"note\\\":\\\"my note\\\"} and receive 200 when valid X-AUTH-TOKEN used. Note is maximum length 100 chars and will be truncated when stored.\",\n            \"status\": false\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Todos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3d7bb47a-9795-4d0e-b616-28f8cc8c4977",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Todos is in array\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.todos).instanceOf(Array);",
+							"});",
+							"",
+							"pm.test(\"Check todo have properties -> [id], [title], [doneStatus] and [description]\", function () {",
+							"    var todosData = pm.response.json().todos;",
+							"     ",
+							"    for(let i=0; i < todosData.length; i++){",
+							"        pm.expect(todosData[i]).to.have.property(\"id\");",
+							"        pm.expect(todosData[i]).to.have.property(\"title\");",
+							"        pm.expect(todosData[i]).to.have.property(\"doneStatus\");",
+							"        pm.expect(todosData[i]).to.have.property(\"description\");",
+							"    }",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "1b5bb33c-41ee-478d-ad4b-219149439b1d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{baseUrl}}/todos"
+			},
+			"response": [
+				{
+					"id": "7839a691-73a4-4810-9331-499aa49e4014",
+					"name": "Get Todos",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/todos"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 19 Apr 2023 13:16:17 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-CHALLENGER",
+							"value": "rest-api-challenges-single-player"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Server",
+							"value": "Jetty(9.4.z-SNAPSHOT)"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"todos\": [\n        {\n            \"id\": 1,\n            \"title\": \"scan paperwork\",\n            \"doneStatus\": false,\n            \"description\": \"\"\n        },\n        {\n            \"id\": 4,\n            \"title\": \"escalate late payments\",\n            \"doneStatus\": false,\n            \"description\": \"\"\n        },\n        {\n            \"id\": 5,\n            \"title\": \"pay invoices\",\n            \"doneStatus\": false,\n            \"description\": \"\"\n        },\n        {\n            \"id\": 7,\n            \"title\": \"train staff\",\n            \"doneStatus\": false,\n            \"description\": \"\"\n        },\n        {\n            \"id\": 8,\n            \"title\": \"schedule meeting\",\n            \"doneStatus\": false,\n            \"description\": \"\"\n        },\n        {\n            \"id\": 9,\n            \"title\": \"tidy meeting room\",\n            \"doneStatus\": false,\n            \"description\": \"\"\n        },\n        {\n            \"id\": 10,\n            \"title\": \"install webcam\",\n            \"doneStatus\": false,\n            \"description\": \"\"\n        },\n        {\n            \"id\": 2,\n            \"title\": \"file paperwork\",\n            \"doneStatus\": false,\n            \"description\": \"\"\n        },\n        {\n            \"id\": 3,\n            \"title\": \"process payments\",\n            \"doneStatus\": false,\n            \"description\": \"\"\n        },\n        {\n            \"id\": 6,\n            \"title\": \"process payroll\",\n            \"doneStatus\": false,\n            \"description\": \"\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
