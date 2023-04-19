@@ -381,7 +381,45 @@
 				"header": [],
 				"url": "{{baseUrl}}/todos/{{invalid-id}}"
 			},
-			"response": []
+			"response": [
+				{
+					"id": "002daf38-b1d9-40fb-95eb-bbddbed6bcef",
+					"name": "Get Todos By Invalid",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/todos/{{invalid-id}}"
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 19 Apr 2023 17:31:51 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-CHALLENGER",
+							"value": "rest-api-challenges-single-player"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Server",
+							"value": "Jetty(9.4.z-SNAPSHOT)"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"errorMessages\": [\n        \"Could not find an instance with todos/10912039091203812\"\n    ]\n}"
+				}
+			]
 		},
 		{
 			"name": "Get todo",
