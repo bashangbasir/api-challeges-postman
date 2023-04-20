@@ -293,7 +293,21 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "{{baseUrl}}/todos"
+				"url": {
+					"raw": "{{baseUrl}}/todos?doneStatus=true",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"todos"
+					],
+					"query": [
+						{
+							"key": "doneStatus",
+							"value": "true"
+						}
+					]
+				}
 			},
 			"response": [
 				{
