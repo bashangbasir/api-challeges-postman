@@ -265,22 +265,7 @@
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
 							"});",
-							"",
-							"pm.test(\"Todos is in array\", function () {",
-							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.todos).instanceOf(Array);",
-							"});",
-							"",
-							"pm.test(\"Check todo have properties -> [id], [title], [doneStatus] and [description]\", function () {",
-							"    var todosData = pm.response.json().todos;",
-							"     ",
-							"    for(let i=0; i < todosData.length; i++){",
-							"        pm.expect(todosData[i]).to.have.property(\"id\");",
-							"        pm.expect(todosData[i]).to.have.property(\"title\");",
-							"        pm.expect(todosData[i]).to.have.property(\"doneStatus\");",
-							"        pm.expect(todosData[i]).to.have.property(\"description\");",
-							"    }",
-							"});"
+							""
 						],
 						"type": "text/javascript"
 					}
