@@ -609,7 +609,58 @@
 				},
 				"url": "{{baseUrl}}/todos"
 			},
-			"response": []
+			"response": [
+				{
+					"id": "0f23a501-7452-4f70-86cc-9a6ddd079137",
+					"name": "Create Todo",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\" : \"Create new repo for collection backup\",\n    \"doneStatus\": true,\n    \"description\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/todos"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 20 Apr 2023 05:25:36 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Location",
+							"value": "todos/11"
+						},
+						{
+							"key": "X-CHALLENGER",
+							"value": "rest-api-challenges-single-player"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Server",
+							"value": "Jetty(9.4.z-SNAPSHOT)"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"id\": 11,\n    \"title\": \"Create new repo for collection backup\",\n    \"doneStatus\": true,\n    \"description\": \"\"\n}"
+				}
+			]
 		}
 	]
 }
