@@ -255,7 +255,7 @@
 			]
 		},
 		{
-			"name": "Get Todos Copy",
+			"name": "Get Todos Filter By",
 			"event": [
 				{
 					"listen": "test",
