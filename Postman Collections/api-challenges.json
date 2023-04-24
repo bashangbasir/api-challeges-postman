@@ -426,6 +426,57 @@
 					"cookie": [],
 					"responseTime": null,
 					"body": "{\n    \"todos\": [\n        {\n            \"id\": 12,\n            \"title\": \"Create new folder \",\n            \"doneStatus\": true,\n            \"description\": \"\"\n        },\n        {\n            \"id\": 11,\n            \"title\": \"Create new repo for collection backup\",\n            \"doneStatus\": true,\n            \"description\": \"\"\n        }\n    ]\n}"
+				},
+				{
+					"id": "9258780c-6d28-40d3-8b69-7a68711a2df6",
+					"name": "Get Todos Filter By",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/todos?doneStatus=false",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"todos"
+							],
+							"query": [
+								{
+									"key": "doneStatus",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 24 Apr 2023 13:41:52 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-CHALLENGER",
+							"value": "rest-api-challenges-single-player"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Server",
+							"value": "Jetty(9.4.z-SNAPSHOT)"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"todos\": [\n        {\n            \"id\": 4,\n            \"title\": \"escalate late payments\",\n            \"doneStatus\": false,\n            \"description\": \"\"\n        },\n        {\n            \"id\": 5,\n            \"title\": \"pay invoices\",\n            \"doneStatus\": false,\n            \"description\": \"\"\n        },\n        {\n            \"id\": 7,\n            \"title\": \"train staff\",\n            \"doneStatus\": false,\n            \"description\": \"\"\n        },\n        {\n            \"id\": 1,\n            \"title\": \"scan paperwork\",\n            \"doneStatus\": false,\n            \"description\": \"\"\n        },\n        {\n            \"id\": 8,\n            \"title\": \"schedule meeting\",\n            \"doneStatus\": false,\n            \"description\": \"\"\n        },\n        {\n            \"id\": 9,\n            \"title\": \"tidy meeting room\",\n            \"doneStatus\": false,\n            \"description\": \"\"\n        },\n        {\n            \"id\": 10,\n            \"title\": \"install webcam\",\n            \"doneStatus\": false,\n            \"description\": \"\"\n        },\n        {\n            \"id\": 2,\n            \"title\": \"file paperwork\",\n            \"doneStatus\": false,\n            \"description\": \"\"\n        },\n        {\n            \"id\": 3,\n            \"title\": \"process payments\",\n            \"doneStatus\": false,\n            \"description\": \"\"\n        },\n        {\n            \"id\": 6,\n            \"title\": \"process payroll\",\n            \"doneStatus\": false,\n            \"description\": \"\"\n        }\n    ]\n}"
 				}
 			]
 		},
