@@ -940,14 +940,14 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"title\" : \"Create new folder \",\n    \"doneStatus\": 3,\n    \"description\": \"\"\n}",
+					"raw": "{\n    \"title\" : \"Create new folder \",\n    \"doneStatus\": true,\n    \"description\": \"\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": "{{baseUrl}}/todos"
+				"url": "{{baseUrl}}/todos/{{id}}"
 			},
 			"response": [
 				{
