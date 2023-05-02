@@ -1776,7 +1776,7 @@
 			]
 		},
 		{
-			"name": "Patch heartbeat Copy",
+			"name": "Trace heartbeat",
 			"event": [
 				{
 					"listen": "test",
