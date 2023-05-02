@@ -1713,7 +1713,7 @@
 				"disableBodyPruning": true
 			},
 			"request": {
-				"method": "DELETE",
+				"method": "PATCH",
 				"header": [],
 				"body": {
 					"mode": "raw",
