@@ -2421,15 +2421,15 @@
 			]
 		},
 		{
-			"name": "Post secret note - No token",
+			"name": "Post secret note",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"id": "fbb72ab5-3855-4c01-abc0-c676e04f33df",
 						"exec": [
-							"pm.test(\"Status code is 401\", function () {",
-							"    pm.response.to.have.status(401);",
+							"pm.test(\"Status code is 403\", function () {",
+							"    pm.response.to.have.status(403);",
 							"});",
 							"",
 							""
@@ -2438,13 +2438,19 @@
 					}
 				}
 			],
-			"id": "efc6daac-834c-4fe3-9941-e7a4b942c695",
+			"id": "39e8a83a-8c7a-4d0b-a14c-37a10cac1376",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "X-AUTH-TOKEN",
+						"value": "{{$randomAbbreviation}}",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\n    \"note\": \"my note is note\"\n}",
@@ -2458,11 +2464,17 @@
 			},
 			"response": [
 				{
-					"id": "f198ef5f-3e64-4759-a076-3b618bcf3cfb",
-					"name": "Post secret note - No token",
+					"id": "16d2b4a5-f837-456f-90cd-5f7cd0c4a5d5",
+					"name": "Post secret note - Invalid token",
 					"originalRequest": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "X-AUTH-TOKEN",
+								"value": "{{$randomAbbreviation}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"note\": \"my note is note\"\n}",
@@ -2474,13 +2486,13 @@
 						},
 						"url": "{{baseUrl}}/secret/note"
 					},
-					"status": "Unauthorized",
-					"code": 401,
+					"status": "Forbidden",
+					"code": 403,
 					"_postman_previewlanguage": "html",
 					"header": [
 						{
 							"key": "Date",
-							"value": "Tue, 02 May 2023 19:05:12 GMT"
+							"value": "Tue, 02 May 2023 19:07:44 GMT"
 						},
 						{
 							"key": "X-CHALLENGER",
@@ -2578,6 +2590,91 @@
 						{
 							"key": "Date",
 							"value": "Tue, 02 May 2023 19:07:44 GMT"
+						},
+						{
+							"key": "X-CHALLENGER",
+							"value": "rest-api-challenges-single-player"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html;charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Server",
+							"value": "Jetty(9.4.z-SNAPSHOT)"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Post secret note - No token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fbb72ab5-3855-4c01-abc0-c676e04f33df",
+						"exec": [
+							"pm.test(\"Status code is 401\", function () {",
+							"    pm.response.to.have.status(401);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "efc6daac-834c-4fe3-9941-e7a4b942c695",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"note\": \"my note is note\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseUrl}}/secret/note"
+			},
+			"response": [
+				{
+					"id": "f198ef5f-3e64-4759-a076-3b618bcf3cfb",
+					"name": "Post secret note - No token",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"note\": \"my note is note\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/secret/note"
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 02 May 2023 19:05:12 GMT"
 						},
 						{
 							"key": "X-CHALLENGER",
