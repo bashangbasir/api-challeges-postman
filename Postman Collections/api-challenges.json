@@ -351,8 +351,8 @@
 							"    pm.response.to.have.header(\"Content-Type\");",
 							"});",
 							"",
-							"pm.test(\"Content-Type is application/xml\", function () {",
-							"    pm.response.to.be.header(\"Content-Type\", \"application/xml\");",
+							"pm.test(\"Content-Type is application/json\", function () {",
+							"    pm.response.to.be.header(\"Content-Type\", \"application/json\");",
 							"});",
 							"",
 							""
@@ -370,7 +370,7 @@
 				"header": [
 					{
 						"key": "Accept",
-						"value": "application/xml",
+						"value": "application/json",
 						"type": "text"
 					}
 				],
