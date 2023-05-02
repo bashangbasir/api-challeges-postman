@@ -999,7 +999,7 @@
 			]
 		},
 		{
-			"name": "Update todo By Id Copy",
+			"name": ".",
 			"event": [
 				{
 					"listen": "test",
@@ -1044,6 +1044,98 @@
 			"response": [
 				{
 					"id": "e4416202-eeff-42fb-b93a-7e0a0f0aaafb",
+					"name": "Create Todo Failed doneStatus Validation",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\" : \"Create new folder \",\n    \"doneStatus\": \"\",\n    \"description\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/todos"
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 02 May 2023 17:57:22 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-CHALLENGER",
+							"value": "rest-api-challenges-single-player"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Server",
+							"value": "Jetty(9.4.z-SNAPSHOT)"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"errorMessages\": [\n        \"Failed Validation: doneStatus should be BOOLEAN\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Update todo By Id Copy 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fbb72ab5-3855-4c01-abc0-c676e04f33df",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"",
+							"pm.test(\"Check responsen to have properties -> [id], [title], [doneStatus] and [description]\", function () {",
+							"",
+							"    var response = pm.response.json();",
+							"    pm.expect(response).to.have.property(\"id\");",
+							"    pm.expect(response).to.have.property(\"title\");",
+							"    pm.expect(response).to.have.property(\"doneStatus\");",
+							"    pm.expect(response).to.have.property(\"description\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "2c86534d-b7a3-4a24-9954-9ed8fd74df40",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\" : \"Create new folder \",\n    \"doneStatus\": true,\n    \"description\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseUrl}}/todos/{{id}}"
+			},
+			"response": [
+				{
+					"id": "a9b287eb-8eef-4eee-b4a2-4f9c17fbc659",
 					"name": "Create Todo Failed doneStatus Validation",
 					"originalRequest": {
 						"method": "POST",
