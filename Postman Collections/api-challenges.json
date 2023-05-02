@@ -2040,6 +2040,106 @@
 					"body": null
 				}
 			]
+		},
+		{
+			"name": "Post token - invalid username/password",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fbb72ab5-3855-4c01-abc0-c676e04f33df",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"X-AUTH-TOKEN\");",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "cf2321ce-fc21-4b21-b58d-a4a666219e12",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "password",
+						"username": "admin"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseUrl}}/secret/token"
+			},
+			"response": [
+				{
+					"id": "dcd83ea0-d927-41b5-8114-88ee0dc61ba1",
+					"name": "Post token",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/secret/token"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 02 May 2023 18:57:50 GMT"
+						},
+						{
+							"key": "X-AUTH-TOKEN",
+							"value": "ebb69616-297d-464d-ab5c-f6ff4b8db799"
+						},
+						{
+							"key": "X-CHALLENGER",
+							"value": "rest-api-challenges-single-player"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html;charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Server",
+							"value": "Jetty(9.4.z-SNAPSHOT)"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": null
+				}
+			]
 		}
 	]
 }
