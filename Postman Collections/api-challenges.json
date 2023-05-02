@@ -1028,6 +1028,102 @@
 			]
 		},
 		{
+			"name": "Create Todo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fbb72ab5-3855-4c01-abc0-c676e04f33df",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"",
+							"pm.test(\"Check responsen to have properties -> [id], [title], [doneStatus] and [description]\", function () {",
+							"",
+							"    var response = pm.response.json();",
+							"    pm.expect(response).to.have.property(\"id\");",
+							"    pm.expect(response).to.have.property(\"title\");",
+							"    pm.expect(response).to.have.property(\"doneStatus\");",
+							"    pm.expect(response).to.have.property(\"description\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "5cc1f13a-f10c-459f-aca9-5e056a6157f1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\" : \"Create new folder \",\n    \"doneStatus\": true,\n    \"description\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseUrl}}/todos"
+			},
+			"response": [
+				{
+					"id": "2656189f-46fe-46e4-b500-071c63045471",
+					"name": "Create Todo",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\" : \"Create new repo for collection backup\",\n    \"doneStatus\": true,\n    \"description\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/todos"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 20 Apr 2023 05:25:36 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Location",
+							"value": "todos/11"
+						},
+						{
+							"key": "X-CHALLENGER",
+							"value": "rest-api-challenges-single-player"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Server",
+							"value": "Jetty(9.4.z-SNAPSHOT)"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"id\": 11,\n    \"title\": \"Create new repo for collection backup\",\n    \"doneStatus\": true,\n    \"description\": \"\"\n}"
+				}
+			]
+		},
+		{
 			"name": "Create Todo - Invalid doneStatus",
 			"event": [
 				{
