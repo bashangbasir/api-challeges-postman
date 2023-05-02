@@ -2264,13 +2264,6 @@
 				"disableBodyPruning": true
 			},
 			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": {
-						"password": "password",
-						"username": "admin"
-					}
-				},
 				"method": "POST",
 				"header": [],
 				"body": {
