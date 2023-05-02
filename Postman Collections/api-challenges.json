@@ -999,7 +999,7 @@
 			]
 		},
 		{
-			"name": "Update todo By Id Copy 2",
+			"name": "Delete todo By Id",
 			"event": [
 				{
 					"listen": "test",
