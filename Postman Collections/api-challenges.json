@@ -1859,6 +1859,91 @@
 					"body": null
 				}
 			]
+		},
+		{
+			"name": "Get heartbeat",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fbb72ab5-3855-4c01-abc0-c676e04f33df",
+						"exec": [
+							"pm.test(\"Status code is 501\", function () {",
+							"    pm.response.to.have.status(501);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "c068966e-8016-4e7b-8a3d-057122a7a58d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseUrl}}/heartbeat"
+			},
+			"response": [
+				{
+					"id": "d3ca96ad-5b5d-475f-bd03-e08fe77be442",
+					"name": "Trace heartbeat",
+					"originalRequest": {
+						"method": "TRACE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/heartbeat"
+					},
+					"status": "Not Implemented",
+					"code": 501,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 02 May 2023 18:50:22 GMT"
+						},
+						{
+							"key": "X-CHALLENGER",
+							"value": "rest-api-challenges-single-player"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html;charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Server",
+							"value": "Jetty(9.4.z-SNAPSHOT)"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": null
+				}
+			]
 		}
 	]
 }
