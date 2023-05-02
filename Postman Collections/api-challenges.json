@@ -1056,7 +1056,8 @@
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true,
 				"disabledSystemHeaders": {
-					"content-type": true
+					"content-type": true,
+					"accept": true
 				}
 			},
 			"request": {
@@ -1064,6 +1065,11 @@
 				"header": [
 					{
 						"key": "Content-Type",
+						"value": "application/xml",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
 						"value": "application/xml",
 						"type": "text"
 					}
