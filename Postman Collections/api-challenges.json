@@ -451,7 +451,7 @@
 				"header": [
 					{
 						"key": "Accept",
-						"value": "application/json",
+						"value": "application/xml, application/json",
 						"type": "text"
 					}
 				],
