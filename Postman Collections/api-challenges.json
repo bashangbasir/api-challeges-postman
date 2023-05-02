@@ -2138,7 +2138,7 @@
 			]
 		},
 		{
-			"name": "Post secret note",
+			"name": "Post secret note - Invalid token",
 			"event": [
 				{
 					"listen": "test",
