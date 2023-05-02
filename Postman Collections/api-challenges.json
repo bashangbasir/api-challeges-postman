@@ -2268,7 +2268,7 @@
 						}
 					}
 				},
-				"url": "{{baseUrl}}/secret/token"
+				"url": "{{baseUrl}}/secret/note"
 			},
 			"response": [
 				{
