@@ -2181,58 +2181,7 @@
 				},
 				"url": "{{baseUrl}}/secret/note"
 			},
-			"response": [
-				{
-					"id": "b2e2cdd1-d72a-46d1-8704-cf77dfc8d8ed",
-					"name": "Post token - invalid username/password",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/secret/token"
-					},
-					"status": "Unauthorized",
-					"code": 401,
-					"_postman_previewlanguage": "html",
-					"header": [
-						{
-							"key": "Date",
-							"value": "Tue, 02 May 2023 18:59:27 GMT"
-						},
-						{
-							"key": "WWW-Authenticate",
-							"value": "Basic realm=\"User Visible Realm\""
-						},
-						{
-							"key": "X-CHALLENGER",
-							"value": "rest-api-challenges-single-player"
-						},
-						{
-							"key": "Content-Type",
-							"value": "text/html;charset=utf-8"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Server",
-							"value": "Jetty(9.4.z-SNAPSHOT)"
-						}
-					],
-					"cookie": [],
-					"responseTime": null,
-					"body": null
-				}
-			]
+			"response": []
 		},
 		{
 			"name": "Post secret note - No token",
