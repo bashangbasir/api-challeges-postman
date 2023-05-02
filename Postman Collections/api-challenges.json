@@ -2322,7 +2322,7 @@
 			]
 		},
 		{
-			"name": "Post secret note - No token Copy",
+			"name": "Post secret note - No token",
 			"event": [
 				{
 					"listen": "test",
