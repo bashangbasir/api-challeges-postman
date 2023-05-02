@@ -2344,11 +2344,11 @@
 				"disableBodyPruning": true
 			},
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "",
+					"raw": "{\n    \"note\": \"my note is note\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
