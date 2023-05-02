@@ -2242,12 +2242,8 @@
 					"script": {
 						"id": "fbb72ab5-3855-4c01-abc0-c676e04f33df",
 						"exec": [
-							"pm.test(\"Status code is 201\", function () {",
-							"    pm.response.to.have.status(201);",
-							"});",
-							"",
-							"pm.test(\"Content-Type is present\", function () {",
-							"    pm.response.to.have.header(\"X-AUTH-TOKEN\");",
+							"pm.test(\"Status code is 401\", function () {",
+							"    pm.response.to.have.status(401);",
 							"});",
 							"",
 							""
@@ -2261,7 +2257,7 @@
 				"disableBodyPruning": true
 			},
 			"request": {
-				"method": "POST",
+				"method": "GET",
 				"header": [],
 				"body": {
 					"mode": "raw",
