@@ -1606,7 +1606,7 @@
 			]
 		},
 		{
-			"name": "Options todo Copy",
+			"name": "Delete heartbeat",
 			"event": [
 				{
 					"listen": "test",
