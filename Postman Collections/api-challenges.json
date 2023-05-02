@@ -411,17 +411,14 @@
 			],
 			"id": "00bdf3dd-0bb7-4bfc-8e6c-873b05bcb06c",
 			"protocolProfileBehavior": {
-				"disableBodyPruning": true
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"accept": true
+				}
 			},
 			"request": {
 				"method": "GET",
-				"header": [
-					{
-						"key": "Accept",
-						"value": "application/xml, application/json",
-						"type": "text"
-					}
-				],
+				"header": [],
 				"url": "{{baseUrl}}/todos"
 			},
 			"response": []
