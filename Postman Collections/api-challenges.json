@@ -2430,7 +2430,13 @@
 			},
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "X-AUTH-TOKEN",
+						"value": "{{$randomAbbreviation}}",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\n    \"note\": \"my note is note\"\n}",
