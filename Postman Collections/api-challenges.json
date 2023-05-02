@@ -1990,48 +1990,6 @@
 			},
 			"response": [
 				{
-					"id": "ec9462a0-8587-4904-bdc1-d76774a5b3be",
-					"name": "Get heartbeat",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/heartbeat"
-					},
-					"status": "No Content",
-					"code": 204,
-					"_postman_previewlanguage": "html",
-					"header": [
-						{
-							"key": "Date",
-							"value": "Tue, 02 May 2023 18:52:00 GMT"
-						},
-						{
-							"key": "X-CHALLENGER",
-							"value": "rest-api-challenges-single-player"
-						},
-						{
-							"key": "Content-Type",
-							"value": "text/html;charset=utf-8"
-						},
-						{
-							"key": "Server",
-							"value": "Jetty(9.4.z-SNAPSHOT)"
-						}
-					],
-					"cookie": [],
-					"responseTime": null,
-					"body": null
-				},
-				{
 					"id": "92c2212b-88f4-43af-a26f-1d23b83e91f7",
 					"name": "Post token",
 					"originalRequest": {
