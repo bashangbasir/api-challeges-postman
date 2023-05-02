@@ -1857,52 +1857,6 @@
 					"cookie": [],
 					"responseTime": null,
 					"body": null
-				},
-				{
-					"id": "5b90e280-f31f-476d-85d1-3fdfe462a332",
-					"name": "Patch heartbeat Copy",
-					"originalRequest": {
-						"method": "TRACE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/heartbeat"
-					},
-					"status": "Not Implemented",
-					"code": 501,
-					"_postman_previewlanguage": "html",
-					"header": [
-						{
-							"key": "Date",
-							"value": "Tue, 02 May 2023 18:50:22 GMT"
-						},
-						{
-							"key": "X-CHALLENGER",
-							"value": "rest-api-challenges-single-player"
-						},
-						{
-							"key": "Content-Type",
-							"value": "text/html;charset=utf-8"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Server",
-							"value": "Jetty(9.4.z-SNAPSHOT)"
-						}
-					],
-					"cookie": [],
-					"responseTime": null,
-					"body": null
 				}
 			]
 		}
