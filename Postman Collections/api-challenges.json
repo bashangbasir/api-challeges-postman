@@ -1080,6 +1080,52 @@
 					"cookie": [],
 					"responseTime": null,
 					"body": "{\n    \"errorMessages\": [\n        \"Failed Validation: doneStatus should be BOOLEAN\"\n    ]\n}"
+				},
+				{
+					"id": "b7be7dbd-cbfc-44fd-be66-0ac7cfc49625",
+					"name": "Delete todo By Id",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/todos/{{id}}"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 02 May 2023 18:02:35 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-CHALLENGER",
+							"value": "rest-api-challenges-single-player"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Server",
+							"value": "Jetty(9.4.z-SNAPSHOT)"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": null
 				}
 			]
 		}
