@@ -2138,7 +2138,7 @@
 			]
 		},
 		{
-			"name": "Post token - invalid username/password Copy",
+			"name": "Post secret note",
 			"event": [
 				{
 					"listen": "test",
