@@ -384,6 +384,49 @@
 			"response": []
 		},
 		{
+			"name": "Get Todos - Accept header (null)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3d7bb47a-9795-4d0e-b616-28f8cc8c4977",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"",
+							"pm.test(\"Content-Type is application/json\", function () {",
+							"    pm.response.to.be.header(\"Content-Type\", \"application/json\");",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "00bdf3dd-0bb7-4bfc-8e6c-873b05bcb06c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml, application/json",
+						"type": "text"
+					}
+				],
+				"url": "{{baseUrl}}/todos"
+			},
+			"response": []
+		},
+		{
 			"name": "Head todos",
 			"event": [
 				{
