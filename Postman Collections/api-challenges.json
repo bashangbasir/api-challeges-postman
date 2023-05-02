@@ -1949,8 +1949,12 @@
 					"script": {
 						"id": "fbb72ab5-3855-4c01-abc0-c676e04f33df",
 						"exec": [
-							"pm.test(\"Status code is 204\", function () {",
-							"    pm.response.to.have.status(204);",
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"X-AUTH-TOKEN\");",
 							"});",
 							"",
 							""
@@ -1964,7 +1968,14 @@
 				"disableBodyPruning": true
 			},
 			"request": {
-				"method": "GET",
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "password",
+						"username": "admin"
+					}
+				},
+				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
@@ -1975,7 +1986,7 @@
 						}
 					}
 				},
-				"url": "{{baseUrl}}/heartbeat"
+				"url": "{{baseUrl}}/secret/token"
 			},
 			"response": [
 				{
