@@ -562,7 +562,7 @@
 			]
 		},
 		{
-			"name": "Get Todos By Invalid",
+			"name": "Get Todos By Invalid Id",
 			"event": [
 				{
 					"listen": "test",
