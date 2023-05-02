@@ -2405,6 +2405,44 @@
 					"body": null
 				}
 			]
+		},
+		{
+			"name": "Post secret note - No token Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fbb72ab5-3855-4c01-abc0-c676e04f33df",
+						"exec": [
+							"pm.test(\"Status code is 401\", function () {",
+							"    pm.response.to.have.status(401);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "ab560edc-fcd4-4685-9b72-27688f402c71",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"note\": \"my note is note\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseUrl}}/secret/note"
+			},
+			"response": []
 		}
 	]
 }
