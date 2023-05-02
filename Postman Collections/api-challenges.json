@@ -424,6 +424,50 @@
 			"response": []
 		},
 		{
+			"name": "Get Todos - Accept header (gzip)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3d7bb47a-9795-4d0e-b616-28f8cc8c4977",
+						"exec": [
+							"pm.test(\"Status code is 406\", function () {",
+							"    pm.response.to.have.status(406);",
+							"});",
+							"",
+							"",
+							"",
+							"pm.test(\"Body contains error [Unrecognised Accept Type] \", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Unrecognised Accept Type\");",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "8b73cbb0-0c55-42a9-8c23-85a553652018",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/gzip",
+						"type": "text"
+					}
+				],
+				"url": "{{baseUrl}}/todos"
+			},
+			"response": []
+		},
+		{
 			"name": "Head todos",
 			"event": [
 				{
