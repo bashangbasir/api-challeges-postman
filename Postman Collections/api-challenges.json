@@ -1148,6 +1148,66 @@
 			"response": []
 		},
 		{
+			"name": "Create Todo - Content-type (json) - Accept (xml)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fbb72ab5-3855-4c01-abc0-c676e04f33df",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"",
+							"pm.test(\"Check responsen to have properties -> [id], [title], [doneStatus] and [description]\", function () {",
+							"",
+							"    var response = pm.response.json();",
+							"    pm.expect(response).to.have.property(\"id\");",
+							"    pm.expect(response).to.have.property(\"title\");",
+							"    pm.expect(response).to.have.property(\"doneStatus\");",
+							"    pm.expect(response).to.have.property(\"description\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "f7adfc19-9668-4bb0-840f-65a13064a904",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"content-type": true,
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/xml",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n<todo>\n\t<title>Create new folder </title>\n\t<doneStatus>true</doneStatus>\n\t<description>folder hidden</description>\n</todo>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "{{baseUrl}}/todos"
+			},
+			"response": []
+		},
+		{
 			"name": "Create Todo - Content-type (unsupported)",
 			"event": [
 				{
