@@ -1070,58 +1070,7 @@
 				},
 				"url": "{{baseUrl}}/todos"
 			},
-			"response": [
-				{
-					"id": "2656189f-46fe-46e4-b500-071c63045471",
-					"name": "Create Todo",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"title\" : \"Create new repo for collection backup\",\n    \"doneStatus\": true,\n    \"description\": \"\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/todos"
-					},
-					"status": "Created",
-					"code": 201,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Date",
-							"value": "Thu, 20 Apr 2023 05:25:36 GMT"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Location",
-							"value": "todos/11"
-						},
-						{
-							"key": "X-CHALLENGER",
-							"value": "rest-api-challenges-single-player"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Server",
-							"value": "Jetty(9.4.z-SNAPSHOT)"
-						}
-					],
-					"cookie": [],
-					"responseTime": null,
-					"body": "{\n    \"id\": 11,\n    \"title\": \"Create new repo for collection backup\",\n    \"doneStatus\": true,\n    \"description\": \"\"\n}"
-				}
-			]
+			"response": []
 		},
 		{
 			"name": "Create Todo - Invalid doneStatus",
