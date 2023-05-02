@@ -336,6 +336,87 @@
 			]
 		},
 		{
+			"name": "Get Todos - Accept header (json)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3d7bb47a-9795-4d0e-b616-28f8cc8c4977",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"",
+							"pm.test(\"Content-Type is application/xml\", function () {",
+							"    pm.response.to.be.header(\"Content-Type\", \"application/xml\");",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "1e149dec-9cbb-4d2c-89f2-dfc8c2e32046",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text"
+					}
+				],
+				"url": "{{baseUrl}}/todos"
+			},
+			"response": [
+				{
+					"id": "5191146f-4605-4e02-a550-7dc5e15a8071",
+					"name": "Get Todos",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/todos"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 19 Apr 2023 13:16:17 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-CHALLENGER",
+							"value": "rest-api-challenges-single-player"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Server",
+							"value": "Jetty(9.4.z-SNAPSHOT)"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"todos\": [\n        {\n            \"id\": 1,\n            \"title\": \"scan paperwork\",\n            \"doneStatus\": false,\n            \"description\": \"\"\n        },\n        {\n            \"id\": 4,\n            \"title\": \"escalate late payments\",\n            \"doneStatus\": false,\n            \"description\": \"\"\n        },\n        {\n            \"id\": 5,\n            \"title\": \"pay invoices\",\n            \"doneStatus\": false,\n            \"description\": \"\"\n        },\n        {\n            \"id\": 7,\n            \"title\": \"train staff\",\n            \"doneStatus\": false,\n            \"description\": \"\"\n        },\n        {\n            \"id\": 8,\n            \"title\": \"schedule meeting\",\n            \"doneStatus\": false,\n            \"description\": \"\"\n        },\n        {\n            \"id\": 9,\n            \"title\": \"tidy meeting room\",\n            \"doneStatus\": false,\n            \"description\": \"\"\n        },\n        {\n            \"id\": 10,\n            \"title\": \"install webcam\",\n            \"doneStatus\": false,\n            \"description\": \"\"\n        },\n        {\n            \"id\": 2,\n            \"title\": \"file paperwork\",\n            \"doneStatus\": false,\n            \"description\": \"\"\n        },\n        {\n            \"id\": 3,\n            \"title\": \"process payments\",\n            \"doneStatus\": false,\n            \"description\": \"\"\n        },\n        {\n            \"id\": 6,\n            \"title\": \"process payroll\",\n            \"doneStatus\": false,\n            \"description\": \"\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
 			"name": "Head todos",
 			"event": [
 				{
