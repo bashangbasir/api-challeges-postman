@@ -2145,13 +2145,15 @@
 					"script": {
 						"id": "fbb72ab5-3855-4c01-abc0-c676e04f33df",
 						"exec": [
-							"pm.test(\"Status code is 403\", function () {",
-							"    pm.response.to.have.status(403);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
 							"});",
 							"",
 							"",
-							"",
-							""
+							"pm.test(\"Check responsen to have properties -> [note] \", function () {",
+							"    var response = pm.response.json();",
+							"    pm.expect(response).to.have.property(\"note\");",
+							"});"
 						],
 						"type": "text/javascript"
 					}
@@ -2166,7 +2168,7 @@
 				"header": [
 					{
 						"key": "X-AUTH-TOKEN",
-						"value": "{{$randomAbstractImage}}",
+						"value": "{{X-AUTH-TOKEN}}",
 						"type": "text"
 					}
 				],
