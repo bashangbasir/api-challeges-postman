@@ -2030,6 +2030,56 @@
 					"cookie": [],
 					"responseTime": null,
 					"body": null
+				},
+				{
+					"id": "92c2212b-88f4-43af-a26f-1d23b83e91f7",
+					"name": "Post token",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/secret/token"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 02 May 2023 18:57:50 GMT"
+						},
+						{
+							"key": "X-AUTH-TOKEN",
+							"value": "ebb69616-297d-464d-ab5c-f6ff4b8db799"
+						},
+						{
+							"key": "X-CHALLENGER",
+							"value": "rest-api-challenges-single-player"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html;charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Server",
+							"value": "Jetty(9.4.z-SNAPSHOT)"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": null
 				}
 			]
 		}
