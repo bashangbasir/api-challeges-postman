@@ -2183,58 +2183,6 @@
 			},
 			"response": [
 				{
-					"id": "40e1726a-146a-41bd-bf8a-fb6b2f96ee45",
-					"name": "Get secret note - Invalid token",
-					"originalRequest": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "X-AUTH-TOKEN",
-								"value": "randomvalue ",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/secret/note"
-					},
-					"status": "Forbidden",
-					"code": 403,
-					"_postman_previewlanguage": "html",
-					"header": [
-						{
-							"key": "Date",
-							"value": "Tue, 02 May 2023 19:05:58 GMT"
-						},
-						{
-							"key": "X-CHALLENGER",
-							"value": "rest-api-challenges-single-player"
-						},
-						{
-							"key": "Content-Type",
-							"value": "text/html;charset=utf-8"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Server",
-							"value": "Jetty(9.4.z-SNAPSHOT)"
-						}
-					],
-					"cookie": [],
-					"responseTime": null,
-					"body": null
-				},
-				{
 					"id": "13166d6b-e4e6-4073-9b0f-b90491aff666",
 					"name": "Get secret note",
 					"originalRequest": {
