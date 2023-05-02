@@ -951,52 +951,6 @@
 			},
 			"response": [
 				{
-					"id": "8bdee925-9d70-450f-9ac1-0053b5f760dc",
-					"name": "Create Todo Failed doneStatus Validation",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"title\" : \"Create new folder \",\n    \"doneStatus\": \"\",\n    \"description\": \"\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/todos"
-					},
-					"status": "Bad Request",
-					"code": 400,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Date",
-							"value": "Tue, 02 May 2023 17:57:22 GMT"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "X-CHALLENGER",
-							"value": "rest-api-challenges-single-player"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Server",
-							"value": "Jetty(9.4.z-SNAPSHOT)"
-						}
-					],
-					"cookie": [],
-					"responseTime": null,
-					"body": "{\n    \"errorMessages\": [\n        \"Failed Validation: doneStatus should be BOOLEAN\"\n    ]\n}"
-				},
-				{
 					"id": "fe1ce04e-c654-42ce-b4f0-977777fbf570",
 					"name": "Update todo By Id",
 					"originalRequest": {
