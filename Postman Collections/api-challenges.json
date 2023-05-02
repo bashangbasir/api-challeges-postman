@@ -1641,7 +1641,54 @@
 				},
 				"url": "{{baseUrl}}/heartbeat"
 			},
-			"response": []
+			"response": [
+				{
+					"id": "ddd539bd-bbf2-4767-bec7-7979445f740c",
+					"name": "Delete heartbeat",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/heartbeat"
+					},
+					"status": "Method Not Allowed",
+					"code": 405,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 02 May 2023 18:46:04 GMT"
+						},
+						{
+							"key": "X-CHALLENGER",
+							"value": "rest-api-challenges-single-player"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html;charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Server",
+							"value": "Jetty(9.4.z-SNAPSHOT)"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": null
+				}
+			]
 		}
 	]
 }
