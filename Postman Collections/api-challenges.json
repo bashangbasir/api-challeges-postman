@@ -2049,6 +2049,102 @@
 					"script": {
 						"id": "fbb72ab5-3855-4c01-abc0-c676e04f33df",
 						"exec": [
+							"pm.test(\"Status code is 401\", function () {",
+							"    pm.response.to.have.status(401);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "cf2321ce-fc21-4b21-b58d-a4a666219e12",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "wrong",
+						"username": "admin"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseUrl}}/secret/token"
+			},
+			"response": [
+				{
+					"id": "190a63ed-0b2e-4dd8-ab51-278b8396b87d",
+					"name": "Post token - invalid username/password",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/secret/token"
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 02 May 2023 18:59:27 GMT"
+						},
+						{
+							"key": "WWW-Authenticate",
+							"value": "Basic realm=\"User Visible Realm\""
+						},
+						{
+							"key": "X-CHALLENGER",
+							"value": "rest-api-challenges-single-player"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html;charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Server",
+							"value": "Jetty(9.4.z-SNAPSHOT)"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Post token - invalid username/password Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fbb72ab5-3855-4c01-abc0-c676e04f33df",
+						"exec": [
 							"pm.test(\"Status code is 201\", function () {",
 							"    pm.response.to.have.status(201);",
 							"});",
@@ -2063,7 +2159,7 @@
 					}
 				}
 			],
-			"id": "cf2321ce-fc21-4b21-b58d-a4a666219e12",
+			"id": "7930d254-9c96-4074-bc44-32cbdd56aebd",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -2090,7 +2186,7 @@
 			},
 			"response": [
 				{
-					"id": "190a63ed-0b2e-4dd8-ab51-278b8396b87d",
+					"id": "b2e2cdd1-d72a-46d1-8704-cf77dfc8d8ed",
 					"name": "Post token - invalid username/password",
 					"originalRequest": {
 						"method": "POST",
